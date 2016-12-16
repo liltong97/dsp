@@ -1,7 +1,6 @@
 # Based on materials copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
-
-
+import string
 def donuts(count):
     """
     Given an int count of a number of donuts, return a string of the
@@ -18,7 +17,12 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    init_str = "Number of donuts: "
+    if count > 9 :
+        num_str = 'many'
+    else:
+        num_str = str(count)
+    return init_str + num_str
 
 
 def both_ends(s):
@@ -37,7 +41,10 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    if len(s) < 2:
+        return ''
+    else:
+        return s[0:2] + s[-2:]
 
 
 def fix_start(s):
@@ -56,7 +63,16 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    new_s = ''
+    firstchar = s[0]
+    new_s += firstchar
+    for letter in s[1:]:
+        if firstchar == letter:
+            new_s += '*'
+        else:
+            new_s += letter
+    return new_s
+
 
 
 def mix_up(a, b):
@@ -74,7 +90,10 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    str1 = b[0:2] + a[2:]
+    str2 = a[0:2] + b[2:]
+    return str1 + ' ' + str2
+
 
 
 def verbing(s):
@@ -91,7 +110,12 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    if len(s) < 3 :
+        return s
+    elif s[-3:] == 'ing':
+        return s + 'ly'
+    else:
+        return s + 'ing'
 
 
 def not_bad(s):
@@ -111,8 +135,25 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    sentence = s.split()
+    sentence = [''.join(c for c in a if c not in string.punctuation) for a in sentence]
 
+    if 'not' in sentence and 'bad' in sentence and sentence.index('not') < sentence.index('bad'):
+        delete = False
+        new_s = ''
+        for word in sentence:
+            if word == 'not':
+                delete = True
+            if not delete:
+                new_s += word + ' '
+            if word == 'bad':
+                delete = False
+                new_s += 'good'
+        if s[-1] in '!.':
+                new_s += s[-1]
+    else:
+        return s
+    return new_s
 
 def front_back(a, b):
     """
@@ -130,4 +171,17 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    if len(a) % 2 ==0 :
+        ind_a = len(a)/2
+    else:
+        ind_a = len(a)/2 + 1
+
+    if len(b) % 2 ==0:
+        ind_b = len(b)/2
+    else:
+        ind_b = len(b)/2 + 1
+
+    str = a[0:ind_a] + b[0:ind_b] + a[ind_a:] + b[ind_b:]
+    return str
+
+

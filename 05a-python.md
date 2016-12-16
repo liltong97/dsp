@@ -12,7 +12,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Tuples are immutable while lists are mutable. They can both be used to store a series of items. Only tuples will work as keys in dictionaries because the keys must be immutable.
 
 ---
 
@@ -20,7 +20,7 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> They both can hold a series of items. Lists can have duplicates where the items in sets must all be unique. Finding an element in a set is much faster than a list because in a set they're stored in a hash but in a list each element must be compared.
 
 ---
 
@@ -28,7 +28,7 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> lambda is used to create a function without having to give it a name, so it generates "anonymous function". This is useful for using it in a function as an argument/parameter. So, for example, in the sorted function we can use lambda to allow the function to sort by a particular value. So for an array of string: sorted(array_of_strings, key = lambda word: word[-1]) will allow us to sort by the last letter of the word.
 
 ---
 
@@ -36,38 +36,41 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> List comprehensions can be used to make more readable code when building lists using for loops. For
+>> example if you wanted an array of cubes from 1-10 that were less than 500 you could use map and
+>> filter: cubes = map(lambda x:x**3, range(11)) and then filter(lambda x:x<500, cubes). Or using list
+>> comprehension you can do [x**3 for x in range(11) if x**3 < 500]
 
 ---
 
 ###Complete the following problems by editing the files below:
 
 ###Q5. Datetime
-Use Python to compute days between start and stop date.   
-a.  
+Use Python to compute days between start and stop date.
+a.
 
 ```
-date_start = '01-02-2013'    
+date_start = '01-02-2013'
 date_stop = '07-28-2015'
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> 937 days
 
-b.  
+b.
 ```
-date_start = '12312013'  
-date_stop = '05282015'  
-```
-
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
-
-c.  
-```
-date_start = '15-Jan-1994'      
-date_stop = '14-Jul-2015'  
+date_start = '12312013'
+date_stop = '05282015'
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
+>> 513 days
+
+c.
+```
+date_start = '15-Jan-1994'
+date_stop = '14-Jul-2015'
+```
+
+>> 7850 days
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
