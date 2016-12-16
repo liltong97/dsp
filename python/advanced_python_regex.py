@@ -48,7 +48,6 @@ def email_domain(email_list):
 
   return d.keys()
 
-import pandas as pd
 filepath = '/Users/lilliantong/ds/metis/metisgh/prework/dsp/python/faculty.csv'
 df = pd.read_csv(filepath)
 
