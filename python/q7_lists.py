@@ -15,7 +15,13 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    count = 0
+    for word in words:
+        if len(word) > 1:
+            if word[0] == word[-1]:
+                count += 1
+
+    return count
 
 
 def front_x(words):
@@ -32,9 +38,18 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    x_words = []
+    other_words = []
+    for word in words:
+        if word[0] == 'x':
+            x_words.append(word)
+        else:
+            other_words.append(word)
+    return sorted(x_words) + sorted(other_words)
 
 
+def last_element(tuple_example):
+    return tuple_example[-1]
 def sort_last(tuples):
     """
     Given a list of non-empty tuples, return a list sorted in
@@ -49,7 +64,8 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    sorted_tuples = sorted(tuples, key=last_element)
+    return sorted_tuples
 
 
 def remove_adjacent(nums):
@@ -68,7 +84,15 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    new_array = []
+
+    for i in range(len(nums)):
+        if i+1 == len(nums):
+             new_array.append(nums[i])
+        elif nums[i] != nums[i+1]:
+            new_array.append(nums[i])
+    return new_array
+
 
 
 def linear_merge(list1, list2):
@@ -85,4 +109,15 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    insert_index = 0
+    list2_index = 0
+
+    for i in list1:
+        while list2_index < len(list2) and list2[list2_index]<i:
+            insert_index += 1
+            list2_index += 1
+        list2.insert(insert_index, i)
+        insert_index += 1
+        list2_index += 1
+    return list2
+
