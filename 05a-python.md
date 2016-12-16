@@ -28,7 +28,13 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> lambda is used to create a function without having to give it a name, so it generates "anonymous function". This is useful for using it in a function as an argument/parameter. So, for example, in the sorted function we can use lambda to allow the function to sort by a particular value. So for an array of string: sorted(array_of_strings, key = lambda word: word[-1]) will allow us to sort by the last letter of the word.
+>> lambda is used to create a function without having to give it a name, so it generates "anonymous function". This is useful for using it in a function as an argument/parameter. So, for example, in the sorted function we can use lambda to allow the function to sort by a particular value. So for an array of strings:
+
+```python
+ sorted(array_of_strings, key = lambda word: word[-1])
+```
+ >>will allow us to sort by the last letter of the word.
+
 
 ---
 
@@ -38,8 +44,18 @@ Explain list comprehensions. Give examples and show equivalents with `map` and `
 
 >> List comprehensions can be used to make more readable code when building lists using for loops. For
 >> example if you wanted an array of cubes from 1-10 that were less than 500 you could use map and
->> filter: cubes = map(lambda x:x**3, range(11)) and then filter(lambda x:x<500, cubes). Or using list
->> comprehension you can do [x**3 for x in range(11) if x**3 < 500]
+>> filter:
+
+```python
+cubes = map(lambda x:x**3, range(11))
+filter(lambda x:x<500, cubes).
+```
+
+>> Or using list comprehension you can do:
+
+```python
+[x**3 for x in range(11) if x**3 < 500]
+```
 
 ---
 
