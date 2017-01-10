@@ -1,7 +1,5 @@
-[Think Stats Chapter 3 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2004.html#toc31) (actual vs. biased)
-
-The mean of the real distribution is 1.024 but of the biased distribution is 2.40.
-
+[Think Stats Chapter 3 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2004.html#toc31) (actual vs. biased)  
+The mean of the real distribution is 1.024 but of the biased distribution is 2.40.  
 Below is the code used for this problem as outlined in chap03ex.ipynb:
 ```python
 def BiasPmf(pmf, label=''):
