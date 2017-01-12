@@ -91,7 +91,7 @@ P(identical twin | twin) = 0.2941
 ###Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Bayesian statistics uses the available knowledge and information to form probabilities about statistics models. Whereas, frequentist statistics uses sample data taken from the population to make statistical inferences.
 
 ---
 
